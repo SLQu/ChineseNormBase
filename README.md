@@ -1,1 +1,1 @@
-# Chinese-social-cultural-norms
+# Chinese Social-cultural Norm Base
