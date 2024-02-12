@@ -1,11 +1,23 @@
 # Chinese Socio-cultural Norm Base
+Sociocultural norms serve as guiding principles for personal conduct in social interactions, emphasizing respect, cooperation, and appropriate behavior, which is able to benefit tasks including conversational information retrieval, contextual information retrieval and retrieval-enhanced machine learning. 
+We propose a scalable approach for constructing a Sociocultural Norm (SCNs) Base using Large Language Models (LLMs) for socially aware dialogues. We construct a comprehensive and publicly accessible Chinese Sociocultural NormBase ChineseNormBase.
+Our approach utilizes socially-aware dialogues, enriched with contextual frames, as the primary data source. 
+This enables extracting of high-quality and nuanced natural-language norm statements, leveraging the pragmatic implications of utterances with respect to the situation. 
+As real dialogue annotated with gold frames are not readily available, we propose using synthetic data. 
+Our empirical results show: (i) the quality of the SCNs derived from synthetic data is comparable to that from real dialogues annotated with gold frames, and (ii) the quality of the SCNs  extracted from real data, annotated with either silver (predicted) or gold frames, surpasses that without the frame annotations.
+We further show the effectiveness of the extracted SCNs in a RAG-based (Retrieval-Augmented Generation) model to reason about multiple  downstream dialogue tasks. 
 
-Social norms are guiding principles for personal conduct in social interactions, emphasizing respect, cooperation, and appropriate behavior, crucially contributing to healthy relationships, effective communication, and individual social integration. This paper proposes a novel framework for extracting Chinese social-cultural norms and constructs the first publicly accessible Chinese Social-Culture Norm Base (ChineseNormBase). We employ socially-aware dialogues enriched with essential meta-information as the primary data source for our framework. These dialogues are input into a prompt incorporating dialogue content and ontology information. With the prompt, the GPT-3 model is able to generate high-quality social-cultural norms. Additionally, comprehensive experiments have been conducted to showcase the practical utility of our dataset as a supplementary source of knowledge, particularly for dialogues-related tasks. Moreover, we outline how our knowledge base is transformed into a bipartite graph, revealing latent yet significant structural insights. 
-
-
+<div align="center">
+<img src=doc/norm_extraction.png />  
+<!-- <img src=doc/norm_extraction.png width=350 height=250 />   -->
+</div>
 
 # dataset
+We choose SocialDial dataset as source of sociocultural frame based dialogues. SocialDial comprises a total of 6,433 instances of multi-round dialogues. We extracted relevant Scn statements based on the dialogues of SocialDial following the methodology illustrated in Figure 1.
+Each dialogue underwent this extraction process twice, extracting
+140,669 Scn statements
 On average, each dialogue is associated with approximately 15.01 socioculture norm statements, and each socioculture norm statement appears in 1.09 dialogues on average. Furthermore, the average length of a socioculture norm statement, including punctuation, is 19.20 tokens.
+
 
 # Dataset Download
 You can directly download the data in our repo. And we have added "social_cultural_norms".
